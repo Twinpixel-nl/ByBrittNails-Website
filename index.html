@@ -1,1 +1,374 @@
-<p>test dit</p>
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ByBritNails</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="top"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress"></div>
+
+    <!-- Floating Button -->
+    <div class="floating-button">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="logo" id="logo">
+        <a href="#home">
+          <img src="images/Logo_britt_transparant.png" alt="ByBritNails Logo" />
+        </a>
+      </div>
+      <nav>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#over-mij" class="nav-link">Over Mij</a>
+        <a href="#diensten" class="nav-link">Diensten</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <a href="https://www.instagram.com/bybrittnails" target="_blank">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
+          alt="Instagram"
+          class="instagram-icon"
+        />
+      </a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <!-- Parallax Background Elements -->
+      <div class="parallax-bg">
+        <div class="parallax-bg-element parallax" data-speed="0.3"></div>
+        <div class="parallax-bg-element parallax" data-speed="0.5"></div>
+        <div class="parallax-bg-element parallax" data-speed="0.2"></div>
+      </div>
+
+      <div class="hero-content fade-in">
+        <img
+          src="images/Logo_britt_transparant.png"
+          alt="ByBritNails Logo"
+          class="hero-logo"
+        />
+      </div>
+
+      <div class="hero-images">
+        <img src="images/image.png" alt="Foto 1" />
+        <img src="images/image1.png" alt="Foto 2" />
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="over-mij" class="about">
+      <div class="parallax-bg">
+        <div class="parallax-bg-element parallax" data-speed="0.2"></div>
+      </div>
+      <div class="about-container fade-in">
+        <img src="images/Britt.png" alt="Profiel foto van Britt" />
+        <h2>Over Mij</h2>
+        <p>
+          Hallo, ik ben Britt, een nagelstylist gespecialiseerd in BIAB. Mijn
+          passie is het creëren van mooie, gezonde nagels!
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="diensten" class="services">
+      <div class="parallax-bg">
+        <div class="parallax-bg-element parallax" data-speed="0.1"></div>
+        <div class="parallax-bg-element parallax" data-speed="0.3"></div>
+      </div>
+      <h2 class="fade-in">Diensten & Prijzen</h2>
+      <div class="services-container">
+        <div class="services-grid">
+          <div class="service-card card-1 slide-in-left">
+            <div class="service-card-header">
+              <i class="fas fa-hand-sparkles"></i><br />
+              <h3>BIAB</h3>
+              <div class="price-tag">€38</div>
+            </div>
+            <div class="service-card-content">
+              <div class="price-item">
+                <span class="service-name">BIAB + single colour</span>
+                <span class="service-price">€43</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 1</span>
+                <span class="service-price">€48</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 2</span>
+                <span class="service-price">€53</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 3</span>
+                <span class="service-price">€58</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card card-2 slide-in-up">
+            <div class="service-card-header">
+              <i class="fas fa-spa"></i><br />
+              <h3>BIAB + E-manicure</h3>
+              <div class="price-tag">€48</div>
+            </div>
+            <div class="service-card-content">
+              <div class="price-item">
+                <span class="service-name">BIAB + single colour</span>
+                <span class="service-price">€53</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 1</span>
+                <span class="service-price">€58</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 2</span>
+                <span class="service-price">€63</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">BIAB + art level 3</span>
+                <span class="service-price">€68</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card card-3 slide-in-up">
+            <div class="service-card-header">
+              <i class="fas fa-paint-brush"></i><br />
+              <h3>Single Colour</h3>
+              <div class="price-tag">€33</div>
+            </div>
+            <div class="service-card-content">
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 1</span>
+                <span class="service-price">€38</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 2</span>
+                <span class="service-price">€43</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 3</span>
+                <span class="service-price">€48</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-card card-4 slide-in-right">
+            <div class="service-card-header">
+              <i class="fas fa-hand-holding-heart"></i>
+              <h3>Single Colour + E-manicure</h3>
+              <div class="price-tag">€43</div>
+            </div>
+            <div class="service-card-content">
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 1</span>
+                <span class="service-price">€46</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 2</span>
+                <span class="service-price">€50</span>
+              </div>
+              <div class="price-item">
+                <span class="service-name">Single colour + art level 3</span>
+                <span class="service-price">€53</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card full-width zoom-in">
+          <div class="service-card-header">
+            <i class="fas fa-eraser"></i>
+            <h3>Verwijderen</h3>
+          </div>
+          <div class="service-card-content removal-services">
+            <div class="price-item">
+              <span class="service-name"
+                >Single colour verwijderen + nieuwe set</span
+              >
+              <span class="service-price">+€5</span>
+            </div>
+            <div class="price-item">
+              <span class="service-name">BIAB verwijderen + nieuwe set</span>
+              <span class="service-price">+€5</span>
+            </div>
+            <br />
+            <div class="price-item">
+              <span class="service-name"
+                >Single colour volledig verwijderen + verzorging nagels</span
+              >
+              <span class="service-price">€18</span>
+            </div>
+            <div class="price-item">
+              <span class="service-name"
+                >BIAB volledig verwijderen + verzorging nagels</span
+              >
+              <span class="service-price">€23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio">
+      <div class="parallax-bg">
+        <div class="parallax-bg-element parallax" data-speed="0.2"></div>
+      </div>
+      <h2 class="fade-in">Portfolio</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/nails1.png" alt="Nail design 1" />
+          <div class="overlay">
+            <p>Hearth nail art</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails2.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Gold detail</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails5.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Snake print</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails6.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Flower % gold</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails7.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails8.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails9.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails10.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails11.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails12.png" alt="Nail design 2" />
+          <div class="overlay">
+            <p>Geometric design</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails3.png" alt="Nail design 3" />
+          <div class="overlay">
+            <p>Floral art</p>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <img src="images/nails4.png" alt="Nail design 4" />
+          <div class="overlay">
+            <p>Ombre effect</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="parallax-bg">
+        <div class="parallax-bg-element parallax" data-speed="0.1"></div>
+      </div>
+      <h2 class="fade-in">Contact</h2>
+      <p class="fade-in">
+        Heb je vragen of wil je een afspraak maken? Stuur me gerust een
+        berichtje via WhatsApp! Ik help je graag verder.
+      </p>
+      <a
+        href="https://wa.me/+31621190576"
+        target="_blank"
+        class="whatsapp-link zoom-in"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/bybrittnails"
+        target="_blank"
+        class="instagram-link zoom-in"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-divider"></div>
+      <div class="footer-container">
+        <div class="footer-section fade-in">
+          <h3>Contact</h3>
+          <p>Email: info@bybritnails.nl</p>
+          <p>Telefoon: +31 6 12345678</p>
+        </div>
+        <div class="footer-section fade-in">
+          <h3>Openingstijden</h3>
+          <p>Ma-Vr: 09:00 - 18:00</p>
+          <p>Za: 10:00 - 16:00</p>
+        </div>
+        <div class="footer-section fade-in">
+          <h3>Volg mij</h3>
+          <a href="https://www.instagram.com/bybrittnails" target="_blank">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <div class="location-section">
+            <a
+              href="https://www.google.com/maps?q=Kapelstraat+5,+6701DD+Wageningen"
+              target="_blank"
+            >
+              <svg class="location-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2025 ByBritNails - Made by Twinpixel</div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
