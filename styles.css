@@ -398,10 +398,25 @@ nav a:hover::after {
   opacity: 1;
 }
 
+.price-tag {
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b6b, #ff7eb9);
+  padding: 0.35rem 0.75rem;
+  border-radius: 2rem;
+  display: inline-block;
+  box-shadow: 0 3px 10px rgba(255, 107, 107, 0.2);
+  text-align: center;
+  min-width: 60px; /* Ensures a minimum width for alignment */
+}
+
 .service-card-header {
   padding: 1.5rem 1.5rem 0.75rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .service-card-header i {
@@ -422,8 +437,8 @@ nav a:hover::after {
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
-  display: inline-block;
-  margin-right: 0.5rem;
+  display: block;
+  width: 100%;
 }
 
 .price-tag {
@@ -434,13 +449,19 @@ nav a:hover::after {
   border-radius: 2rem;
   display: inline-block;
   box-shadow: 0 3px 10px rgba(255, 107, 107, 0.2);
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  align-self: flex-end;
+  margin-top: -2.5rem;
 }
 
 .service-card-content {
   padding: 1rem 1.5rem 1.5rem;
+}
+
+/* Price alignment container */
+.price-column {
+  width: 70px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .price-item {
@@ -458,6 +479,8 @@ nav a:hover::after {
 .service-name {
   color: var(--secondary-color);
   font-size: 0.95rem;
+  flex: 1;
+  padding-right: 10px;
 }
 
 .service-price {
@@ -466,6 +489,9 @@ nav a:hover::after {
   background: rgba(255, 107, 107, 0.1);
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
+  width: 60px;
+  text-align: center;
+  display: inline-block;
 }
 
 .service-card.full-width {
@@ -496,6 +522,20 @@ nav a:hover::after {
   .service-card.animate.card-3,
   .service-card.animate.card-4 {
     transform: translateY(0);
+  }
+
+  .price-tag {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+  }
+
+  .service-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-price {
+    width: 50px;
   }
 }
 
@@ -825,6 +865,33 @@ footer::before {
 
   .hero-content {
     align-items: center;
+  }
+
+  .hero-logo {
+    width: 150px; /* Pas dit aan op basis van je design */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeScaleIn 1.2s ease-out forwards;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Fade + Scale Effect */
+  @keyframes fadeScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Nieuwe Glow Effect bij Hover */
+  .hero-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px 5px rgba(255, 107, 107, 0.7); /* Sterkere neon glow */
+    filter: brightness(1.2); /* Zorgt voor extra neon effect */
   }
 
   .hero-images {
