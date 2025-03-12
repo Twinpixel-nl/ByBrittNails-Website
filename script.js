@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Observe all elements with animation classes
   document
     .querySelectorAll(
-      ".fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .zoom-in, .portfolio-item, .service-card"
+      ".fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .zoom-in, .portfolio-item, .service-card, .footer-section"
     )
     .forEach((element) => {
       fadeObserver.observe(element);
@@ -138,6 +138,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Add hover effects to the "over mij" cards
+  const overMijCards = document.querySelectorAll(".card");
+  overMijCards.forEach((card, index) => {
+    // Set animation delay based on index for staggered appearance
+    card.style.setProperty("--i", index + 1);
+
+    // Add 3D tilt effect on mouse move
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left; // x position within the element
+      const y = e.clientY - rect.top; // y position within the element
+
+      // Calculate rotation based on mouse position
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+
+      // Apply the transform
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-15px)`;
+    });
+
+    // Reset transform on mouse leave
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  // Add shimmer effect to footer divider
+  const footerDivider = document.querySelector(".footer-divider");
+  if (footerDivider) {
+    setInterval(() => {
+      footerDivider.classList.add("shimmer");
+      setTimeout(() => {
+        footerDivider.classList.remove("shimmer");
+      }, 2000);
+    }, 5000);
+  }
+
   // Trigger animations for elements already in viewport on page load
   setTimeout(() => {
     const scrollTop = window.scrollY;
@@ -145,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document
       .querySelectorAll(
-        ".fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .zoom-in, .portfolio-item, .service-card"
+        ".fade-in, .slide-in-left, .slide-in-right, .slide-in-up, .zoom-in, .portfolio-item, .service-card, .footer-section"
       )
       .forEach((element) => {
         const elementTop = element.getBoundingClientRect().top + scrollTop;
