@@ -7,7 +7,7 @@
   --white: #ffffff;
   --background-gradient: linear-gradient(
     to bottom,
-    rgb(214, 134, 159) 0%,
+    rgb(215, 150, 171) 0%,
     #ffe6ea 10%,
     #ffc0cb 50%,
     #ffaabb 100%
@@ -1122,17 +1122,20 @@ html {
 }
 /* Card Container */
 .card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(280px, 1fr)
+  ); /* Max 3 per rij, minimaal 280px breed */
+  gap: 40px; /* Grotere ruimte tussen de kaarten */
   margin-top: 2rem;
-  perspective: 1000px;
+  max-width: 1200px; /* Zorgt ervoor dat de container niet te breed wordt */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Card Styling */
 .card {
-  width: 300px;
   background: white;
   padding: 1em;
   border-radius: 12px;
@@ -1142,6 +1145,9 @@ html {
   opacity: 0;
   animation: cardAppear 0.8s forwards;
   animation-delay: calc(var(--i, 0) * 0.2s);
+  max-width: 350px; /* Zorgt dat kaarten niet te breed worden */
+  width: 100%; /* Laat ze netjes in de grid passen */
+  justify-self: center; /* Zorgt ervoor dat ze gecentreerd blijven in de grid */
 }
 
 @keyframes cardAppear {
@@ -1212,6 +1218,18 @@ html {
 
 .card:hover .card-image img {
   transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 kaarten per rij */
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr); /* 1 kaart per rij */
+  }
 }
 
 /* Category Styling */
