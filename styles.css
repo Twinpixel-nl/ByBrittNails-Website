@@ -248,6 +248,11 @@ nav {
     width: 80%;
   }
 }
+
+.port {
+justify-content: left;
+margin-left: 7rem;
+}
 .instagram-link {
   display: flex;
   align-items: center;
