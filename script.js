@@ -2,6 +2,14 @@
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
+    
+    // Close mobile menu if it's open
+    if (document.querySelector('nav').classList.contains('active')) {
+      document.querySelector('.hamburger').classList.remove('active');
+      document.querySelector('nav').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    
     document.querySelector(this.getAttribute("href")).scrollIntoView({
       behavior: "smooth",
     });
@@ -26,6 +34,37 @@ document.querySelector("#logo a").addEventListener("click", function (e) {
   });
 });
 
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+if (hamburger) {
+  hamburger.addEventListener('click', function() {
+    this.classList.toggle('active');
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('active');
+    
+    // Prevent body scrolling when menu is open
+    if (nav.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  const nav = document.querySelector('nav');
+  const hamburger = document.querySelector('.hamburger');
+  
+  if (nav.classList.contains('active') && 
+      !nav.contains(e.target) && 
+      !hamburger.contains(e.target)) {
+    nav.classList.remove('active');
+    hamburger.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
 // Scroll animations and UI enhancements
 document.addEventListener("DOMContentLoaded", function () {
   // Scroll progress indicator
@@ -37,7 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.scrollY;
     const docHeight = document.body.offsetHeight - window.innerHeight;
     const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + "%";
+    if (scrollProgress) {
+      scrollProgress.style.width = scrollPercent + "%";
+    }
 
     // Show/hide floating button
     if (scrollTop > 300) {
@@ -53,6 +94,20 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       header.classList.remove("scrolled");
     }
+  });
+  
+  // Handle resize events for responsive behavior
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      // If mobile menu is open and screen is resized to desktop size
+      if (window.innerWidth > 768 && document.querySelector('nav').classList.contains('active')) {
+        document.querySelector('nav').classList.remove('active');
+        document.querySelector('.hamburger').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }, 250);
   });
 
   // Scroll to top when floating button is clicked
