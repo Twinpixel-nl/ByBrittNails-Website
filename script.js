@@ -145,17 +145,21 @@ document.addEventListener("DOMContentLoaded", function () {
       fadeObserver.observe(element);
     });
 
-  // Parallax effect for hero section
+  // Parallax effect for hero section (desktop only)
   const parallaxElements = document.querySelectorAll(".parallax");
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset;
+  if (!isMobile && parallaxElements.length) {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset;
 
-    parallaxElements.forEach((element) => {
-      const speed = element.dataset.speed || 0.5;
-      element.style.transform = `translateY(${scrollTop * speed}px)`;
+      parallaxElements.forEach((element) => {
+        const speed = element.dataset.speed || 0.5;
+        element.style.transform = `translateY(${scrollTop * speed}px)`;
+      });
     });
-  });
+  }
+
 
   // Staggered animations for service cards and portfolio items
   const animateWithDelay = (selector) => {

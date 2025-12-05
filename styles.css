@@ -2174,6 +2174,12 @@ html {
   }
 }
 
+@media (max-width: 768px) {
+  .parallax-bg-element {
+    animation: none;
+    transform: none !important;
+  }
+}
 /* Scroll Progress Indicator */
 .scroll-progress {
   position: fixed;

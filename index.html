@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Sneller fonts ophalen -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Belangrijkste logo alvast preloaden -->
+    <!-- Belangrijke afbeeldingen preloaden (logo + hero) -->
     <link rel="preload" href="images/Logo_britt_transparant.webp" as="image">
+    <link rel="preload" href="images/image.webp" as="image" media="(max-width: 768px)">
 
     <!-- Basis SEO -->
     <title>By Britt Nails | Nagelstudio in Wageningen | BIAB & Nail Art</title>
@@ -17,7 +20,7 @@
     />
     <meta name="robots" content="index, follow" />
 
-    <!-- Pas dit aan naar je echte domein -->
+    <!-- Canonical -->
     <link rel="canonical" href="https://bybrittnails.nl/" />
 
     <!-- Open Graph / Social -->
@@ -56,20 +59,23 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-<link
-  rel="preload"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  as="style"
-  onload="this.rel='stylesheet'"
->
-<noscript>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  />
-</noscript>
+
+    <!-- Font Awesome non-blocking -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    >
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      />
+    </noscript>
 
     <link rel="stylesheet" href="styles.css" />
+
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -133,7 +139,6 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-0CR5N5HTZ9");
   </script>
 
@@ -758,6 +763,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- script met defer zodat hij niet blokkeert -->
+    <script src="script.js" defer></script>
   </body>
 </html>
